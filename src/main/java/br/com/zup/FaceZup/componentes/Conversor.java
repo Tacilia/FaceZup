@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 public class Conversor {
 
     @Bean
-    public ModelMapper modelMapper(){
+    public ModelMapper conversorDTO(){
         return new ModelMapper();
     }
 

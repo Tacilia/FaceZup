@@ -1,9 +1,7 @@
 package br.com.zup.FaceZup.usuario;
 
-import br.com.zup.FaceZup.menssagem.Menssagem;
-
 import javax.persistence.*;
-import java.util.List;
+//import java.util.List;
 
 @Entity
 @Table(name = "usuarios")
@@ -16,8 +14,8 @@ public class Usuario {
     private String email;
     private String cargo;
 
-    @OneToMany(mappedBy = "usuario")
-    private List<Menssagem> mensagens;
+   /* @OneToMany(mappedBy = "usuario")
+    private List<Menssagem> mensagens;*/
 
     public Usuario(){
 
@@ -55,11 +53,11 @@ public class Usuario {
         this.cargo = cargo;
     }
 
-    public List<Menssagem> getMensagens() {
+    /*public List<Menssagem> getMensagens() {
         return mensagens;
     }
 
     public void setMensagens(List<Menssagem> mensagens) {
-        this.mensagens = mensagens;
-    }
+        this.m*//*ensagens = mensagens;
+    }*/
 }
