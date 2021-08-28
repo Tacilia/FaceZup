@@ -32,6 +32,7 @@ public class UsuarioController {
     public List<Usuario> exibirTodosOsUsuario(){
         return usuarioService.exibirTodosOsUsuarios();
     }
+
     @GetMapping("/{pesquisarEmail}")
     public Usuario pesquisarUsuarioPeloId(@PathVariable(name = "pesquisarEmail") String id) {
         Usuario usuario;
