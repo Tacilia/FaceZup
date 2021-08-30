@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -23,7 +24,7 @@ public class MensagemController {
 
     @PostMapping("/{usuarioId}")
     @ResponseStatus(HttpStatus.CREATED)
-    public MensagemDTO cadastrarMensagem(@RequestBody MensagemCadastroDTO mensagemCadastroDTO, @PathVariable String usuarioId){
+    public MensagemDTO cadastrarMensagem(@RequestBody @Valid MensagemCadastroDTO mensagemCadastroDTO, @PathVariable String usuarioId){
         Mensagem mensagem = MensagemIdDTO.converterDTOParaModel();
         mensagem = mensagemService.cadastraeMensagem(usuarioId, mensagem);
         return MensagemDTO.converterModelParaDTO(mensagem);
