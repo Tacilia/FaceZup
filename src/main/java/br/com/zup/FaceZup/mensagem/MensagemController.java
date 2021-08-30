@@ -1,6 +1,8 @@
 package br.com.zup.FaceZup.mensagem;
 
 import br.com.zup.FaceZup.mensagem.dtos.MensagemCadastroDTO;
+import br.com.zup.FaceZup.mensagem.dtos.MensagemDTO;
+import br.com.zup.FaceZup.mensagem.dtos.MensagemIdDTO;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -15,10 +17,12 @@ public class MensagemController {
     @Autowired
     private ModelMapper modelMapper;
 
-    /*@PostMapping("/{usuarioId}")
+    @PostMapping("/{usuarioId}")
     @ResponseStatus(HttpStatus.CREATED)
-    public MensagemCadastroDTO cadastrarMensagem(@RequestBody MensagemCadastroDTO mensagemCadastroDTO, @PathVariable String usuarioId){
-        Mensagem mensagem = mensagemCadastroDTO.converterDTOParaModel
-    }*/
+    public MensagemDTO cadastrarMensagem(@RequestBody MensagemCadastroDTO mensagemCadastroDTO, @PathVariable String usuarioId){
+        Mensagem mensagem = MensagemIdDTO.converterDTOParaModel();
+        mensagem = mensagemService.cadastraeMensagem(usuarioId, mensagem);
+        return MensagemDTO.converterModelParaDTO(mensagem);
+    }
 
 }
