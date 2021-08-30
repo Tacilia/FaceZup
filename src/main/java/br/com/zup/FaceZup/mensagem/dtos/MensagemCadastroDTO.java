@@ -6,7 +6,11 @@ import java.time.LocalDate;
 
 public class MensagemCadastroDTO {
 
+    private Integer id;
     private String mensagem;
+    private String destino;
+    private String origem;
+
 
     public MensagemCadastroDTO(){
 
