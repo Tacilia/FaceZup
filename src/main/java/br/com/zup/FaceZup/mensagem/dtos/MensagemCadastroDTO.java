@@ -16,6 +16,14 @@ public class MensagemCadastroDTO {
 
     }
 
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
     public String getMensagem() {
         return mensagem;
     }
@@ -24,12 +32,19 @@ public class MensagemCadastroDTO {
         this.mensagem = mensagem;
     }
 
-    public void setUsuario(Usuario usuario) {
+    public String getDestino() {
+        return destino;
     }
 
-    public void setDataDeEnvio(LocalDate now) {
+    public void setDestino(String destino) {
+        this.destino = destino;
     }
 
-    public void setVisualizado(boolean b) {
+    public String getOrigem() {
+        return origem;
+    }
+
+    public void setOrigem(String origem) {
+        this.origem = origem;
     }
 }
