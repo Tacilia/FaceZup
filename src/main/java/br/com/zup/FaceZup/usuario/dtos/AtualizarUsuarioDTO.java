@@ -7,7 +7,7 @@ import javax.validation.constraints.Size;
 public class AtualizarUsuarioDTO {
 
     private String nome;
-    private String sobrenome;
+    private String sobreNome;
     @NotNull(message = "Id obrigatorio")
     @Size(message = "Minimo 10 letras", min = 10)
     @Email(message = "Email fora do padrão")
@@ -27,11 +27,11 @@ public class AtualizarUsuarioDTO {
     }
 
     public String getSobrenome() {
-        return sobrenome;
+        return sobreNome;
     }
 
     public void setSobrenome(String sobrenome) {
-        this.sobrenome = sobrenome;
+        this.sobreNome = sobrenome;
     }
 
     public String getEmail() {

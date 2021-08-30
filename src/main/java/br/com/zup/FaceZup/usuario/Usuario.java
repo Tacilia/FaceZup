@@ -8,7 +8,7 @@ import javax.persistence.*;
 public class Usuario {
 
     private String nome;
-    private String sobrenome;
+    private String sobreNome;
     @Id
     @Column(unique = true, nullable = false)
     private String email;
@@ -30,11 +30,11 @@ public class Usuario {
     }
 
     public String getSobrenome() {
-        return sobrenome;
+        return sobreNome;
     }
 
     public void setSobrenome(String sobrenome) {
-        this.sobrenome = sobrenome;
+        this.sobreNome = sobrenome;
     }
 
     public String getEmail() {
