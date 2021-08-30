@@ -6,8 +6,8 @@ import br.com.zup.FaceZup.usuario.dtos.UsuarioDTO;
 import java.time.LocalDate;
 
 public class MensagemDTO {
-    private String id;
-    private Mensagem mensagem;
+    private Integer id;
+    private String mensagem;
     private LocalDate dataDeEnvio;
     private boolean visualizado;
 
@@ -17,19 +17,19 @@ public class MensagemDTO {
 
     }
 
-    public String getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
-    public Mensagem getMensagem() {
+    public String getMensagem() {
         return mensagem;
     }
 
-    public void setMensagem(Mensagem mensagem) {
+    public void setMensagem(String mensagem) {
         this.mensagem = mensagem;
     }
 

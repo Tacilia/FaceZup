@@ -11,33 +11,51 @@ import java.time.LocalDate;
 public class Mensagem {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String id;
-    private Mensagem mensagem;
+    private Integer id;
+    private String mensagem;
+
+    @ManyToOne
+    @JoinColumn(name = "destino" , nullable = false)
+    private Usuario destinoUsuario;
+    @ManyToOne
+    @JoinColumn(name = "origem", nullable = false)
+    private Usuario usuario;
     private LocalDate dataDeEnvio;
     private boolean visualizado;
 
-    @ManyToOne
-    @JoinColumn(name = "usuario_id", nullable = false)
-    private Usuario usuario;
-
     public Mensagem() {
-
     }
 
-    public String getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
-    public Mensagem getMensagem() {
+    public String getMensagem() {
         return mensagem;
     }
 
-    public void setMensagem(Mensagem mensagem) {
+    public void setMensagem(String mensagem) {
         this.mensagem = mensagem;
+    }
+
+    public Usuario getDestinoUsuario() {
+        return destinoUsuario;
+    }
+
+    public void setDestinoUsuario(Usuario destinoUsuario) {
+        this.destinoUsuario = destinoUsuario;
+    }
+
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
     }
 
     public LocalDate getDataDeEnvio() {
@@ -54,13 +72,5 @@ public class Mensagem {
 
     public void setVisualizado(boolean visualizado) {
         this.visualizado = visualizado;
-    }
-
-    public Usuario getUsuario() {
-        return usuario;
-    }
-
-    public void setUsuario(Usuario usuario) {
-        this.usuario = usuario;
     }
 }

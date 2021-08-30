@@ -2,13 +2,16 @@ package br.com.zup.FaceZup.mensagem.dtos;
 
 import br.com.zup.FaceZup.usuario.Usuario;
 
+import javax.validation.constraints.Email;
 import java.time.LocalDate;
 
 public class MensagemCadastroDTO {
 
     private Integer id;
     private String mensagem;
+    @Email(message = "{validacao.mensagem.destino}")
     private String destino;
+    @Email(message = "{validacao.mensagem.origem}")
     private String origem;
 
 
