@@ -9,6 +9,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -20,6 +21,7 @@ public class UsuarioController {
 
     @Autowired
     private ModelMapper conversorDTO;
+    private AtualizarUsuarioDTO atualizarUsuarioDTO;
 
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping
@@ -45,7 +47,8 @@ public class UsuarioController {
         }
     }
     @PutMapping
-    public Usuario atualizarUsuario(@RequestBody AtualizarUsuarioDTO atualizarUsuarioDTO){
+    public Usuario atualizarUsuario(@RequestBody @Valid AtualizarUsuarioDTO atualizarUsuarioDTO){
+        this.atualizarUsuarioDTO = atualizarUsuarioDTO;
         ObjectMapper objectMapper = new ObjectMapper();
         Usuario objetoConvertido = objectMapper.convertValue(atualizarUsuarioDTO, Usuario.class);
 

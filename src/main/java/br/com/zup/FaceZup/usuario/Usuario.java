@@ -1,6 +1,9 @@
 package br.com.zup.FaceZup.usuario;
 
+import br.com.zup.FaceZup.mensagem.Mensagem;
+
 import javax.persistence.*;
+import java.util.List;
 //import java.util.List;
 
 @Entity
@@ -14,8 +17,8 @@ public class Usuario {
     private String email;
     private String cargo;
 
-   /* @OneToMany(mappedBy = "usuario")
-    private List<Menssagem> mensagens;*/
+   @OneToMany(mappedBy = "usuario")
+    private List<Mensagem> chat;
 
     public Usuario(){
 
