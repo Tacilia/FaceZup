@@ -48,5 +48,4 @@ public class ResumoUsuarioDTO {
                         usuario.getSobrenome())
                 ).collect(Collectors.toList());
     }
-
 }
