@@ -13,7 +13,7 @@ import java.util.Optional;
 public class UsuarioService {
 
     @Autowired
-    private UsuarioRepository usuarioRepository;
+    private static UsuarioRepository usuarioRepository;
 
     public Usuario salvarUsuario(Usuario usuario){
         return usuarioRepository.save(usuario);
@@ -22,6 +22,7 @@ public class UsuarioService {
     public List<Usuario> exibirTodosOsUsuarios(){
         return (List<Usuario>) usuarioRepository.findAll();
     }
+
     public boolean usuarioExistente(String id){
         return usuarioRepository.existsById(id);
     }

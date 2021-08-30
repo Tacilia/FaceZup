@@ -1,6 +1,8 @@
 package br.com.zup.FaceZup.mensagem;
 
 
+import br.com.zup.FaceZup.usuario.Usuario;
+
 import javax.persistence.*;
 import java.time.LocalDate;
 
@@ -10,13 +12,13 @@ public class Mensagem {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String id;
-    private String mensagem;
+    private Mensagem mensagem;
     private LocalDate dataDeEnvio;
     private boolean visualizado;
 
-    /*@ManyToOne
-    @JoinColumn(name = "contato_id", nullable = false)
-    private Contato contato;*/
+    @ManyToOne
+    @JoinColumn(name = "usuario_id", nullable = false)
+    private Usuario usuario;
 
     public Mensagem() {
 
@@ -30,11 +32,11 @@ public class Mensagem {
         this.id = id;
     }
 
-    public String getMensagem() {
+    public Mensagem getMensagem() {
         return mensagem;
     }
 
-    public void setMensagem(String mensagem) {
+    public void setMensagem(Mensagem mensagem) {
         this.mensagem = mensagem;
     }
 
@@ -52,5 +54,13 @@ public class Mensagem {
 
     public void setVisualizado(boolean visualizado) {
         this.visualizado = visualizado;
+    }
+
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
     }
 }
